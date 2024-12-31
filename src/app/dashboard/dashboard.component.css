@@ -1,0 +1,23 @@
+
+body{
+    margin: 0;
+}
+.parent{
+
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+    display: flex;
+}
+.left{
+    width: 20%;
+    height: 100%;
+    background-color:black ;
+    color: antiquewhite;
+}
+.right{
+    width: 80%;
+    height: 100%;
+    background-color: blueviolet;
+
+}

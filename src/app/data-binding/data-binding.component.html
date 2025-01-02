@@ -1,0 +1,35 @@
+<h1>Data Binding</h1>
+
+<!-- interpolation -->
+
+<h3>{{name}}</h3>
+<h3>{{age}}</h3>
+<h3>{{email}}</h3>
+
+<h3>{{user.name}}</h3>
+<h3>{{user.age}}</h3>
+<h3>{{user.email}}</h3>
+<h3>{{isIndian}}</h3>
+
+<!-- Event binding -->
+<label for="">Name:</label>
+<input type="text" name="" id=""> <br>
+<label for="">Email:</label>
+<input type="email" name="" id="">  <br>
+<label for="">Mobile:</label>
+<input type="number" name="" id=""> <br>
+
+<!-- event methods -->
+<input type="text" (keyup)="typing()" name="" id="">
+<button [disabled]="isIndian" (click)="submit()">submit </button> <br><br><br>
+<!-- two way binding -->
+ <input type="text" name="" id="" [(ngModel)]="phone"> <br>
+
+<!-- all four ways of binding in task -->
+<label for="">num:1</label>
+<input type="number" name="" id="" [(ngModel)]="num1"> <br>
+<label for="">num:2</label>
+<input type="number" name="" id="" [(ngModel)]="num2"> <br>
+<button [disabled]="!num1 || !num2" (click)="sum()">sum</button>
+
+<h2>sum is:{{result}}</h2>

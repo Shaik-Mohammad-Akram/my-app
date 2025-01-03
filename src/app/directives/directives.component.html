@@ -1,0 +1,55 @@
+<h1>Directives</h1>
+
+<h2>{{age}}</h2>
+
+<h2 *ngFor="let age of ages">My age is:{{age}}</h2>
+
+<h5>{{state}}</h5>
+
+<ol>
+    <li *ngFor="let state of states">
+        {{state}}
+    </li>
+</ol>
+<ul>
+    <li *ngFor="let state of states">
+        {{state}}
+    </li>
+</ul>
+
+<select name="" id="">
+    <option value="" *ngFor="let state of states" >{{state}}</option>
+</select>
+
+<h3 *ngFor="let product of products">{{product.Name}} cost is {{product.price}}</h3>
+
+<table border="1" [cellPadding]="10" [cellSpacing]="0" style="background-color: aliceblue; margin-left: 150px;margin-bottom: 20px;" [width]="300" >
+    <thead >
+        <tr>
+            <th> S no</th>
+            <th> Name</th>
+            <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products;let i=index">
+            <td>
+                {{i+1}}
+            </td>
+            <td>
+                {{product.Name}}
+            </td>
+            <!-- <td [ngStyle]="{'color':product.price<=50000 ? 'green':'red'}">
+                {{product.price}}
+            </td> -->
+            <td [ngClass]="{'color1':product.price<=50000 , 'color2':product.price>1000000}">
+                {{product.price}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 *ngIf="true">Hii Team❤️😍🙏✌️</h1>
+<h1 *ngIf="false">This is Akram😎😘💫</h1>
+<!-- <h1>Hii Team❤️😍🙏✌️</h1> -->
+<h1>This is Akram😎😘💫</h1>

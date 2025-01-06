@@ -22,5 +22,6 @@ products:any[]=[
   {Name:'Bike',price:500000},
   {Name:'Car',price:5300000},
 
-]
+];
+today:any=new Date();
 }

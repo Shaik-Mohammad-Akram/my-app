@@ -43,7 +43,7 @@
                 {{product.price}}
             </td> -->
             <td [ngClass]="{'color1':product.price<=50000 , 'color2':product.price>1000000}">
-                {{product.price}}
+                {{product.price |currency}}
             </td>
         </tr>
     </tbody>
@@ -53,3 +53,10 @@
 <h1 *ngIf="false">This is Akram😎😘💫</h1>
 <!-- <h1>Hii Team❤️😍🙏✌️</h1> -->
 <h1>This is Akram😎😘💫</h1>
+
+<h1>{{today}}</h1>
+<h1>{{today | date}}</h1>
+<h1>{{today | date:'dd/MM/yyyy'}}</h1>
+<h1>{{today | date: 'yyyy-MM-dd'}}</h1>
+<h1>{{today | date: 'hh:mm':'ist'}}</h1> 
+

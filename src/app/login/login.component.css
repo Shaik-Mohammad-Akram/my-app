@@ -1,0 +1,96 @@
+#linkedin{
+    height: 400px;
+    width: 330px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 30px 5px  rgb(129, 129, 129);
+    /* box-shadow: 10px 10px 20px 1px  rgb(203, 203, 203); */
+    margin-left: 500px;
+    border-radius: 10px;
+    
+}
+#button-addon2{
+    color: blue;
+    border: 0;
+}
+.form-control{
+    border: 0;
+}
+/* .form-control{
+    border: 1px solid gray;
+} */
+ #pass{
+    border: 1px solid gray;
+    border-radius: 5px;  
+    width: 300px;
+    /* padding-left: 1px ; */
+    margin-left: 15px;
+    margin-top: 10px;
+ }
+#exampleInputEmail1{
+    border: 1px solid gray;
+    width: 300px;
+    /* padding-left: 1px ; */
+    margin-left: 15px;
+    margin-top: 10px;
+}
+#forgot{
+    text-decoration: none;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+#forgot1{
+    text-decoration: none;
+    /* padding-bottom: 30px; */
+    
+
+}
+#new{
+    margin-left: 570px;
+    margin-top: 30px;
+}
+#submit{
+    width: 300px;
+    /* padding-left: 1px ; */
+    margin-left: 15px;
+    margin-top: 10px;
+    border-radius: 30px;
+    /* border: 1px solid black; */
+}
+#submit1{
+    width: 300px;
+    /* padding-left: 1px ; */
+    margin-left: 15px;
+    margin-top: 10px;
+    border-radius: 30px;
+    border: 2px solid rgb(36, 36, 36);
+}
+p{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+h2{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+#hr{
+    display: flex;
+}
+hr{
+    width: 130px;
+    margin-left: 15px;
+    margin-top: 23px;
+
+}
+svg{
+    margin-bottom: 4px;
+}
+#new{
+    display: flex;
+}
+img{
+    width: 220px;
+    height: 140px;
+    margin-left: 20px;
+    /* margin-top: 120px; */
+    
+}

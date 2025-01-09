@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="card" *ngFor="let movie of movies">
+        <h5>{{movie.movie}}</h5>
+        <h6>Rating: <span *ngFor="let star of [].constructor(getstar(movie.rating))">⭐</span></h6>
+        <a href={{movie.imdb_url}} class="btn btn-primary" >View On IMBd</a>
+
+       
+    </div>
+</div>

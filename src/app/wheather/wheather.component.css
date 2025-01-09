@@ -1,0 +1,41 @@
+.container{
+    height:100vh;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+    align-items: center;
+   
+    background-color:  whitesmoke;
+}
+.card{
+    width: 450px;
+    height: 350px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+
+}
+svg{
+    height:100px;
+    width: 100px;
+}
+.blue{
+    color: blue;
+}
+.yellow{
+    color: yellow;
+}
+.green{
+    color: greenyellow;
+}
+.red{
+    color:red;
+}
+h1{
+    margin-left: 12px;
+    color: orange;
+}

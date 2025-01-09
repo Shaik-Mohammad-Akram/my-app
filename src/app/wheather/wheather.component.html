@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card">
+        <p>{{ date | date:'medium':'UTC+5:30'}}</p>
+        <h4> Weather in Hyderabad</h4>
+       
+        <svg  [ngClass]="{'blue':wheathers.current_weather.temperature <0,'yellow':wheathers.current_weather.temperature>0 && wheathers.current_weather.temperature <=30,'green':wheathers.current_weather.temperature>30,'red':wheathers.current_weather.temperature>35}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+          </svg>
+          <h1>{{wheathers.current_weather.temperature}}{{wheathers.current_weather_units.temperature}}  </h1>
+       
+        <h6>Windspeed: {{wheathers.current_weather.windspeed}}{{wheathers.current_weather_units.windspeed}}</h6>
+        <h6>Winddirection: {{wheathers.current_weather.winddirection}}{{wheathers.current_weather_units.temperature}} (NE)</h6>
+        <h5 >{{wheathers.current_weather.is_day == 1 ? 'Daytime' : 'Nighttime'}}</h5>
+    </div>
+</div>

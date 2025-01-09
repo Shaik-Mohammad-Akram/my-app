@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="cards" *ngFor="let pic of pics">
+      <img src={{pic.download_url}} alt="" class="">
+      <a href={{pic.url}} class="btn btn-primary" >Download</a>
+      <h6>{{pic.author}}</h6>
+    </div>
+</div>

@@ -17,6 +17,7 @@ import { WheatherComponent } from './wheather/wheather.component';
 import { MoviesComponent } from './movies/movies.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { CarouselsComponent } from './carousels/carousels.component';
+import { AccountsComponent } from './accounts/accounts.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
     {path:'movies',component:MoviesComponent},
     {path:'profiles',component:ProfilesComponent},
     {path:'carousels',component:CarouselsComponent},
+    {path:'accounts',component:AccountsComponent},
 
 
   ]},

@@ -22,6 +22,7 @@ import { WheatherComponent } from './wheather/wheather.component';
 import { MoviesComponent } from './movies/movies.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { CarouselsComponent } from './carousels/carousels.component';
+import { AccountsComponent } from './accounts/accounts.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CarouselsComponent } from './carousels/carousels.component';
     WheatherComponent,
     MoviesComponent,
     ProfilesComponent,
-    CarouselsComponent
+    CarouselsComponent,
+    AccountsComponent
   ],
   imports: [
     BrowserModule,

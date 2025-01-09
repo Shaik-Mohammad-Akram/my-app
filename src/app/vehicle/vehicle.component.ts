@@ -10,7 +10,10 @@ import { CarouselsComponent } from '../carousels/carousels.component';
 export class VehicleComponent {
   vehicles:any=[];
   constructor(private _vehicleService:VehicleService){
-    _vehicleService.getVehicles().subscribe(
+    this.pageload();
+  }
+  pageload(){
+    this._vehicleService.getVehicles().subscribe(
       (data:any)=>{
       this.vehicles=data;
        console.log(this.vehicles)
@@ -40,5 +43,27 @@ export class VehicleComponent {
         alert('internal server error')
       }
     )
+  }
+  limit:number=0;
+  page:number=0;
+  pagination(){
+    this._vehicleService.getpaginatedvehicles(this.limit,this.page).subscribe(
+      (data:any)=>{
+        this.vehicles=data;
+        console.log(this.vehicles);
+      },(err:any)=>{alert('internal server error')}
+    )
+  }
+  delete(id:number){
+    if(confirm('Are you sure to delete?')==true){
+      this._vehicleService.deletevehicle(id).subscribe(
+        (data:any)=>{
+          alert('Record Deleted succesfully');
+          this.pageload();
+        },(err:any)=>{
+          alert('Internal server error')
+        }
+      )
+    }
   }
 }

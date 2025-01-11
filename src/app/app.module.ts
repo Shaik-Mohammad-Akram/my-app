@@ -8,7 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ShoppingComponent } from './shopping/shopping.component';
@@ -23,6 +23,9 @@ import { MoviesComponent } from './movies/movies.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { CarouselsComponent } from './carousels/carousels.component';
 import { AccountsComponent } from './accounts/accounts.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { StudentsComponent } from './students/students.component';
+import { CreateStudentsidComponent } from './create-studentsid/create-studentsid.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +47,17 @@ import { AccountsComponent } from './accounts/accounts.component';
     MoviesComponent,
     ProfilesComponent,
     CarouselsComponent,
-    AccountsComponent
+    AccountsComponent,
+    CreateVehicleComponent,
+    StudentsComponent,
+    CreateStudentsidComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],

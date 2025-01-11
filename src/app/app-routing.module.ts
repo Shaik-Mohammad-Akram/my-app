@@ -18,6 +18,9 @@ import { MoviesComponent } from './movies/movies.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { CarouselsComponent } from './carousels/carousels.component';
 import { AccountsComponent } from './accounts/accounts.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { StudentsComponent } from './students/students.component';
+import { CreateStudentsidComponent } from './create-studentsid/create-studentsid.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -29,6 +32,8 @@ const routes: Routes = [
     {path:'employee',component:EmployeeComponent},
     {path:'shopping',component:ShoppingComponent},
     {path:'vehicle',component:VehicleComponent},
+    {path:'create-vehicle',component:CreateVehicleComponent},
+
     {path:'flipkart',component:FlipkartComponent},
     {path:'mail',component:MailComponent},
     {path:'pinterest',component:PinterestComponent},
@@ -38,6 +43,8 @@ const routes: Routes = [
     {path:'profiles',component:ProfilesComponent},
     {path:'carousels',component:CarouselsComponent},
     {path:'accounts',component:AccountsComponent},
+    {path:'students',component:StudentsComponent},
+    {path:'create-studentid',component:CreateStudentsidComponent},
 
 
   ]},

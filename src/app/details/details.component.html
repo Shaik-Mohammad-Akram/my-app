@@ -11,6 +11,14 @@
     <input type="email" formControlName="email"><br>
     <label for="">DOB:</label><br>
     <input type="date" formControlName="dob"><br>
+    <label for="">Mobile:</label><br>
+    <input type="number" formControlName="mobile"><br>
+    <div *ngIf="detailsform.get('mobile')?.invalid && detailsform.get('mobile')?.touched">
+        <p *ngIf="detailsform.get('mobile')?.errors?.['required']">Mobile.no is required</p>
+        <p *ngIf="detailsform.get('mobile')?.errors?.['min']">Mobile.no  start with proper Number</p>
+        <p *ngIf="detailsform.get('mobile')?.errors?.['max']">Mobile.no  must be maximum 10 digits</p>
+
+    </div>
     <div formGroupName="address">
         <label for="">Address Line:</label><br>
         <input type="text"  formControlName="addressline"> <br>
@@ -22,6 +30,12 @@
 
         <label for="">Pincode</label><br>
         <input type="number"  formControlName="pincode"> <br>
+        <div *ngIf="detailsform.get('address')?.get('pincode')?. invalid && detailsform.get('address')?.get('pincode')?.touched">
+            <p *ngIf="detailsform.get('address')?.get('pincode')?.errors?.['required']">Pincode is required</p>
+            <p *ngIf="detailsform.get('address')?.get('pincode')?.errors?.['min']">pincode must be 6digits.</p>
+            <p *ngIf="detailsform.get('address')?.get('pincode')?.errors?.['max']">pincode must be 6digits.</p>
+
+        </div>
     </div>
 
         <label for="">Type:</label>

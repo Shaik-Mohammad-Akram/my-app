@@ -42,3 +42,13 @@ button{
   0 0 10px cyan,
   0 0 10px cyan;
 }
+p{
+ 
+  /* border: 1px solid red; */
+  color: red;
+  text-shadow: 
+  0 0 10px cyan,
+  0 0 10px cyan,
+  0 0 10px cyan,
+  0 0 10px cyan;
+}

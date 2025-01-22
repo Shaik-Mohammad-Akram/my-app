@@ -2,14 +2,35 @@
 <form action="" [formGroup]="userForm">
     <label for="">Name:</label>
     <input type="text" formControlName="name"><br>
+    <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+
+    </div>
 
     <label for="">Email:</label>
     <input type="email" formControlName="email"><br>
+    <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">Email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">Email is required</p>
+
+    </div>
 
     <label for="">Password:</label>
     <input type="password" formControlName="password"><br>
+    <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+        <p *ngIf="userForm.get('password')?.errors?.['required']">Password is required</p>
+        <p *ngIf="userForm.get('password')?.errors?.['minlength']">Password must be minimum 6 letters</p>
+        <p *ngIf="userForm.get('password')?.errors?.['maxlength']">Password must be maximum 10 letters</p>
+
+    </div>
     <label for="">Mobile:</label>
     <input type="number" formControlName="mobile"><br>
+    <div *ngIf="userForm.get('mobile')?.invalid && userForm.get('mobile')?.touched">
+        <p *ngIf="userForm.get('mobile')?.errors?.['required']">Mobile.no is required</p>
+        <p *ngIf="userForm.get('mobile')?.errors?.['min']">Mobile.no  start with 6</p>
+        <p *ngIf="userForm.get('mobile')?.errors?.['max']">Mobile.no  must be maximum 10 digits</p>
+
+    </div>
     <div formGroupName="address">
         <label for="">Village</label>
         <input type="text"  formControlName="village"> <br>

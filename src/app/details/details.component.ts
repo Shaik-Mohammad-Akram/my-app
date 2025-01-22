@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
@@ -13,11 +13,12 @@ export class DetailsComponent {
     fathername:new FormControl(),
     email:new FormControl(),
     dob:new FormControl(),
+    mobile:new FormControl('',[Validators.required,Validators.min(1000000000),Validators.max(9999999999)]),
     address:new FormGroup({
       addressline:new FormControl(),
       city:new FormControl(),
       state:new FormControl(),
-      pincode:new FormControl(),
+      pincode:new FormControl('',[Validators.required,Validators.min(100000),Validators.max(999999)]),
     }),
     type:new FormControl(),
     cards:new FormArray([]),

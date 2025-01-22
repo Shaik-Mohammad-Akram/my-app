@@ -9,12 +9,12 @@
 <!-- <H1>LinkedIn</H1> -->
  
 <img src="https://download.logo.wine/logo/LinkedIn/LinkedIn-Logo.wine.png" alt="">
-<form id="linkedin">
+<form id="linkedin" [formGroup]="loginForm">
     <h2>Sign In</h2>
       <p >Stay updated on your professional world</p> 
     <div class="mb-3">
       <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email or Phone">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email or Phone" formControlName="email">
       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
     </div>
     <!-- <div class="mb-3">
@@ -22,7 +22,7 @@
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div> -->
     <div class="input-group mb-3" id="pass">
-        <input type="text" class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input type="password" class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2" formControlName="password">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">show</button>
       </div>
     <!-- <div class="mb-3 form-check">
@@ -30,7 +30,7 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div> -->
     <a  id="forgot" href="#" class="link-primary">Forgot password ?</a> <br>
-    <button type="submit" class="btn btn-primary" id="submit" routerLink="/dashboard">Sign in</button>
+    <button type="submit" class="btn btn-primary" id="submit" (click)="login()">Sign in</button>
     <div id="hr">
         <hr> <p>or</p> <hr>
     </div>

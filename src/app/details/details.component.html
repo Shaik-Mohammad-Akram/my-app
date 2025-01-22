@@ -1,0 +1,66 @@
+<form action="" [formGroup]="detailsform">
+    <h1>Details</h1>
+
+    <label for="">Name:</label><br>
+    <input type="text" formControlName="name"><br>
+    <label for="">Class:</label><br>
+    <input type="number" formControlName="class"><br>
+    <label for="">FatherName:</label><br>
+    <input type="text" formControlName="fathername"><br>
+    <label for="">Email:</label><br>
+    <input type="email" formControlName="email"><br>
+    <label for="">DOB:</label><br>
+    <input type="date" formControlName="dob"><br>
+    <div formGroupName="address">
+        <label for="">Address Line:</label><br>
+        <input type="text"  formControlName="addressline"> <br>
+        <label for="">City:</label><br>
+        <input type="text" formControlName="city"> <br>
+
+        <label for="">State</label><br>
+        <input type="text"  formControlName="state"> <br>
+
+        <label for="">Pincode</label><br>
+        <input type="number"  formControlName="pincode"> <br>
+    </div>
+
+        <label for="">Type:</label>
+        <input type="radio" name="type" formControlName="type" value="dayscholar" class="radio">
+        <label for="">Dayscholar</label>
+        <input type="radio" name="type" formControlName="type" value="hostel" class="radio">
+        <label for="">Hostel</label><br>
+        <div *ngIf="detailsform.get('type')?.value=='dayscholar'">
+            <label for="">Bus Fee:</label><br>
+            <input type="number" formControlName="busfee"><br>
+        </div>
+        <div *ngIf="detailsform.get('type')?.value=='hostel'">
+            <label for="">Hostel Fee:</label><br>
+            <input type="number" formControlName="hostelfee"><br>
+        </div><br>
+        <button (click)="reportcard()">Add Card</button>
+        <div formArrayName="cards">
+            <div  *ngFor="let card of cardFormArray.controls; let i=index" >
+                <div formGroupName="{{i}}">
+                    <h2>card{{i+1}}</h2>
+                    <label for="">Class:</label><br>
+                    <input type="number" formControlName="class"><br>
+                    <label for="">Year:</label><br>
+                    <input type="number" formControlName="year"><br>
+                    <label for="">Percentage:</label><br>
+                    <input type="number" formControlName="percentage"><br><br>
+                    <button (click)="delete(i)">Delete Card</button>
+                </div>
+    
+            </div>
+        </div>
+
+
+        
+
+  
+
+
+
+   <br> <button (click)="create()">Create Profile Details</button>
+
+</form>

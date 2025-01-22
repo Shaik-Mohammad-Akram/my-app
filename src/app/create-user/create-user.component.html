@@ -1,0 +1,68 @@
+<h1>Create User</h1>
+<form action="" [formGroup]="userForm">
+    <label for="">Name:</label>
+    <input type="text" formControlName="name"><br>
+
+    <label for="">Email:</label>
+    <input type="email" formControlName="email"><br>
+
+    <label for="">Password:</label>
+    <input type="password" formControlName="password"><br>
+    <label for="">Mobile:</label>
+    <input type="number" formControlName="mobile"><br>
+    <div formGroupName="address">
+        <label for="">Village</label>
+        <input type="text"  formControlName="village"> <br>
+        <label for="">District</label>
+        <input type="text" formControlName="district"> <br>
+
+        <label for="">State</label>
+        <input type="text"  formControlName="state"> <br>
+
+        <label for="">Pincode</label>
+        <input type="number"  formControlName="pincode"> <br>
+
+        
+
+    </div>
+    <label for="">Type:</label>
+    <input type="radio" name="type" formControlName="type" value="dayscholar">
+    <label for="">Dayscholar</label>
+    <input type="radio" name="type" formControlName="type" value="hostel">
+    <label for="">Hostel</label><br>
+    <div *ngIf="userForm.get('type')?.value=='dayscholar'">
+        <label for="">Bus Fee:</label>
+        <input type="number" formControlName="busfee"><br>
+    </div>
+    <div *ngIf="userForm.get('type')?.value=='hostel'">
+        <label for="">Hostel Fee:</label>
+        <input type="number" formControlName="hostelfee"><br>
+    </div>
+
+    <button (click)="addcard()">Add Card</button>
+    <div formArrayName="cards">
+        <div  *ngFor="let card of cardFormArray.controls; let i=index" >
+            <div formGroupName="{{i}}">
+                <h2>card{{i+1}}</h2>
+                <label for="">Number:</label>
+                <input type="number" formControlName="number"><br>
+                <label for="">Expiry::</label>
+                <input type="month" formControlName="expiry"><br>
+                <label for="">CVV:</label>
+                <input type="number" formControlName="cvv"><br>
+                <button (click)="delete(i)">Delete Card</button>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+    <button (click)="create()">submit</button>
+</form>

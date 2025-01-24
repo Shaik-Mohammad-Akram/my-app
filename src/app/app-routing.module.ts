@@ -23,32 +23,36 @@ import { StudentsComponent } from './students/students.component';
 import { CreateStudentsidComponent } from './create-studentsid/create-studentsid.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { DetailsComponent } from './details/details.component';
+import { AuthenticationGuard } from './authentication.guard';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:'',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent,children:[
-    {path:'home',component:HomeComponent},
-    {path:'data-binding',component:DataBindingComponent},
-    {path:'directives',component:DirectivesComponent},
-    {path:'employee',component:EmployeeComponent},
-    {path:'shopping',component:ShoppingComponent},
-    {path:'vehicle',component:VehicleComponent},
-    {path:'create-vehicle',component:CreateVehicleComponent},
+  {path:'dashboard',canActivate:[AuthenticationGuard],component:DashboardComponent,children:[
+    {path:'home',canActivate:[AuthenticationGuard],component:HomeComponent},
+    {path:'data-binding',canActivate:[AuthenticationGuard],component:DataBindingComponent},
+    {path:'directives',canActivate:[AuthenticationGuard],component:DirectivesComponent},
+    {path:'employee',canActivate:[AuthenticationGuard],component:EmployeeComponent},
+    {path:'shopping',canActivate:[AuthenticationGuard],component:ShoppingComponent},
+    {path:'vehicle',canActivate:[AuthenticationGuard],component:VehicleComponent},
+    {path:'create-vehicle',canActivate:[AuthenticationGuard],component:CreateVehicleComponent},
 
-    {path:'flipkart',component:FlipkartComponent},
-    {path:'mail',component:MailComponent},
-    {path:'pinterest',component:PinterestComponent},
-    {path:'blogs',component:BlogsComponent},
-    {path:'wheather',component:WheatherComponent},
-    {path:'movies',component:MoviesComponent},
-    {path:'profiles',component:ProfilesComponent},
-    {path:'carousels',component:CarouselsComponent},
-    {path:'accounts',component:AccountsComponent},
-    {path:'students',component:StudentsComponent},
-    {path:'create-studentid',component:CreateStudentsidComponent},
-    {path:'create-user',component:CreateUserComponent},
-    {path:'details',component:DetailsComponent},
+    {path:'flipkart',canActivate:[AuthenticationGuard],component:FlipkartComponent},
+    {path:'mail',canActivate:[AuthenticationGuard],component:MailComponent},
+    {path:'pinterest',canActivate:[AuthenticationGuard],component:PinterestComponent},
+    {path:'blogs',canActivate:[AuthenticationGuard],component:BlogsComponent},
+    {path:'wheather',canActivate:[AuthenticationGuard],component:WheatherComponent},
+    {path:'movies',canActivate:[AuthenticationGuard],component:MoviesComponent},
+    {path:'profiles',canActivate:[AuthenticationGuard],component:ProfilesComponent},
+    {path:'carousels',canActivate:[AuthenticationGuard],component:CarouselsComponent},
+    {path:'accounts',canActivate:[AuthenticationGuard],component:AccountsComponent},
+    {path:'students',canActivate:[AuthenticationGuard],component:StudentsComponent},
+    {path:'create-studentid',canActivate:[AuthenticationGuard],component:CreateStudentsidComponent},
+    {path:'create-user',canActivate:[AuthenticationGuard],component:CreateUserComponent},
+    {path:'details',canActivate:[AuthenticationGuard],component:DetailsComponent},
+    {path:'vehicle-details/:id',canActivate:[AuthenticationGuard],component:VehicleDetailsComponent},
+    {path:'edit-vehicle/:id',canActivate:[AuthenticationGuard],component:CreateVehicleComponent}
 
 
   ]},

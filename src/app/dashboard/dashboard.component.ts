@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 export class DashboardComponent {
  constructor(private _router:Router){}
  logout(){
+  sessionStorage.removeItem('token');
   this._router.navigateByUrl('/login');
+  
   alert('logout succesful');
  }
 }

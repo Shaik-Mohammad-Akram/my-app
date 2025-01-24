@@ -1,0 +1,26 @@
+.info{
+    width: 700px;
+    height: 500px;
+    background-color: white;
+    margin-left: 150px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 30px;
+    display: flex;
+}
+aside{
+    width: 350px;
+    height: 500px;
+    background-color: white;
+}
+main{
+    width: 350px;
+    height: 500px;
+    background-color: whitesmoke;
+}
+h5{
+    color: crimson;
+}
+label{
+    color: black;
+}

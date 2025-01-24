@@ -25,6 +25,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { DetailsComponent } from './details/details.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -52,7 +53,9 @@ const routes: Routes = [
     {path:'create-user',canActivate:[AuthenticationGuard],component:CreateUserComponent},
     {path:'details',canActivate:[AuthenticationGuard],component:DetailsComponent},
     {path:'vehicle-details/:id',canActivate:[AuthenticationGuard],component:VehicleDetailsComponent},
-    {path:'edit-vehicle/:id',canActivate:[AuthenticationGuard],component:CreateVehicleComponent}
+    {path:'edit-vehicle/:id',canActivate:[AuthenticationGuard],component:CreateVehicleComponent},
+    {path:'student-details/:id',canActivate:[AuthenticationGuard],component:StudentDetailsComponent},
+    {path:'edit-student-details/:id',canActivate:[AuthenticationGuard],component:CreateStudentsidComponent},
 
 
   ]},

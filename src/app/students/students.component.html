@@ -61,8 +61,8 @@
         <p>EMAIL:{{student.email}}</p>
        </main>
        <footer>
-        <button class="btn btn-warning" id="view">view</button>
-        <button class="btn btn-primary" id="edit">edit</button>
+        <button class="btn btn-warning" id="view" routerLink="/dashboard/student-details/{{student.id}}">view</button>
+        <button class="btn btn-primary" id="edit" routerLink="/dashboard/edit-student-details/{{student.id}}" >edit</button>
         <button class="btn btn-danger" id="del" (click)="delete(student.id)">delete</button>
        </footer>
        </div>

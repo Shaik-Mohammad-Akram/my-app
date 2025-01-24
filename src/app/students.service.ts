@@ -28,4 +28,10 @@ export class StudentsService {
   createstudentsdetails(data:any):Observable<any>{
     return this._httpclient.post('https://6128991386a213001729f9df.mockapi.io/test/v1/student',data);
   }
+  getstudentdetails(id:number):Observable<any>{
+    return this._httpclient.get('https://6128991386a213001729f9df.mockapi.io/test/v1/student/'+id)
+  }
+  updatestudentdetails(id:number,data:any):Observable<any>{
+    return this._httpclient.put('https://6128991386a213001729f9df.mockapi.io/test/v1/student/'+id,data)
+  }
 }

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { StudentsService } from '../students.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
+import { identifierName } from '@angular/compiler';
 
 @Component({
   selector: 'app-create-studentsid',
@@ -9,7 +10,25 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./create-studentsid.component.css']
 })
 export class CreateStudentsidComponent {
- constructor(private _studentsservice:StudentsService, private _router:Router){}
+  id:number=0;
+ constructor(private _studentsservice:StudentsService, private _router:Router,private _activateRoute:ActivatedRoute){
+   // capturing the id
+  _activateRoute.params.subscribe(
+    (data:any)=>{
+      console.log(data.id);
+      this.id=data.id;
+      // interagating api using get method
+      _studentsservice.getstudentdetails(data.id).subscribe(
+        (data:any)=>{
+          console.log(data);
+          this.StudentsForm.patchValue(data);
+        },(err:any)=>{
+          alert:('error')
+        }
+      )
+    }
+  )
+ }
  public StudentsForm:FormGroup= new FormGroup(
   {
     name:new FormControl(),
@@ -20,17 +39,31 @@ export class CreateStudentsidComponent {
     email:new FormControl(),
   }
  )
- create(){
-  console.log(this.StudentsForm.value);
-  this._studentsservice.createstudentsdetails(this.StudentsForm.value).subscribe(
-    (data:any)=>{
-      alert('Student ID created successfully😍')
-      this._router.navigateByUrl("/dashboard/students");
+ submit(){
+  if(this.id){
+    this._studentsservice.updatestudentdetails(this.id,this.StudentsForm.value).subscribe(
+      (data:any)=>{
+        console.log(data);
+        alert('Vehicle updated Sucessfully😍😍😍');
+        // this._router.navigate(['/vehicle']);
+        this._router.navigateByUrl("/dashboard/students");
+      },(err:any)=>{
+        alert('internal server error');
+      }
+    )
+  }else{
+    console.log(this.StudentsForm.value);
+    this._studentsservice.createstudentsdetails(this.StudentsForm.value).subscribe(
+      (data:any)=>{
+        alert('Student ID created successfully😍')
+        this._router.navigateByUrl("/dashboard/students");
+  
+      },(err:any)=>{
+        alert('internal server error');
+      }
+    )
+   }
+  }
 
-    },(err:any)=>{
-      alert('internal server error');
-    }
-  )
- }
 
 }

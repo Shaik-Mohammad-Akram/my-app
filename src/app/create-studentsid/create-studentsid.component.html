@@ -1,5 +1,5 @@
 
-<form action="">
+<form action="" [formGroup]="StudentsForm">
     <h1>Create Student ID</h1>
     <label for="">Student Name:</label><br>
     <input type="text" formControlName="name" placeholder="Enter Your Name"><br>
@@ -13,5 +13,5 @@
     <input type="number" formControlName="phone" placeholder="Enter Your Phone number"><br>
     <label for="">Email:</label><br>
     <input type="text" formControlName="email" placeholder="Enter Your Mail"><br><br>
-    <button class="btn btn-info" (click)="create()">Submit</button>
+    <button class="btn btn-info" (click)="submit()">Submit</button>
 </form>

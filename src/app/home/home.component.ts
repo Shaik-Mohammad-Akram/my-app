@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Usesr } from '../usesr';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+user:Usesr={
+name:'',
+age:0,
+}
 }

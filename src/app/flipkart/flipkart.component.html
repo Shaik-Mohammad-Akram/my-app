@@ -3,7 +3,9 @@
         <div class="parent">
             <img src={{product.image}} alt="">
             <div class="rating">
-               <p id="cat">{{product.rating.rate}}|{{product.rating.count}}</p> 
+               <app-rating [rating]="product.rating.rate"></app-rating>
+
+               <p id="cat"> |{{product.rating.count}}</p> 
                
             </div>
     

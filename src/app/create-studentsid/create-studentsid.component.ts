@@ -44,7 +44,7 @@ export class CreateStudentsidComponent {
     this._studentsservice.updatestudentdetails(this.id,this.StudentsForm.value).subscribe(
       (data:any)=>{
         console.log(data);
-        alert('Vehicle updated Sucessfully😍😍😍');
+        alert('student Details updated Sucessfully😍😍😍');
         // this._router.navigate(['/vehicle']);
         this._router.navigateByUrl("/dashboard/students");
       },(err:any)=>{

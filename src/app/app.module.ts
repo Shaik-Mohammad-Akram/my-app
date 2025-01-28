@@ -30,6 +30,13 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { DetailsComponent } from './details/details.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
+import { CapitalDirective } from './capital.directive';
+import { BalancePipe } from './balance.pipe';
 
 @NgModule({
   declarations: [
@@ -58,7 +65,14 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     CreateUserComponent,
     DetailsComponent,
     VehicleDetailsComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    Sibling1Component,
+    Sibling2Component,
+    ParentComponent,
+    ChildComponent,
+    RatingComponent,
+    CapitalDirective,
+    BalancePipe
   ],
   imports: [
     BrowserModule,

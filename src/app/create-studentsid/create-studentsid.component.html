@@ -1,8 +1,9 @@
 
 <form action="" [formGroup]="StudentsForm">
-    <h1>Create Student ID</h1>
+    <h1 *ngIf="!id">Create Student ID</h1>
+    <h1 *ngIf="id">Edit Student Details</h1>
     <label for="">Student Name:</label><br>
-    <input type="text" formControlName="name" placeholder="Enter Your Name"><br>
+    <input type="text" formControlName="name" placeholder="Enter Your Name" appCapital><br>
     <label for="">City:</label><br>
     <input type="text" formControlName="city" placeholder="Enter Your City"><br>
     <label for="">DOB:</label><br>

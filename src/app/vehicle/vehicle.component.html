@@ -58,7 +58,7 @@
             <td>{{ vehicle.model}}</td>
             <td>{{ vehicle.type}}</td>
             <td>{{ vehicle.fuel}}</td>
-            <td>{{vehicle.cost}}</td>
+            <td [ngStyle]="{'color':vehicle.cost>300?'green':'red'}">{{vehicle.cost | balance}}</td>
             <td><img src={{vehicle.image}} alt=""></td>
             <td><button class="btn btn-info" routerLink="/dashboard/vehicle-details/{{vehicle.id}}"><i class="bi bi-eye-fill"></i></button></td>
             <td><button class="btn btn-info" routerLink="/dashboard/edit-vehicle/{{vehicle.id}}"><i class="bi bi-pencil-square"></i></button></td>

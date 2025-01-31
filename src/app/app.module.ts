@@ -13,7 +13,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { MailComponent } from './mail/mail.component';
 import { PinterestComponent } from './pinterest/pinterest.component';
@@ -37,6 +37,9 @@ import { ChildComponent } from './child/child.component';
 import { RatingComponent } from './rating/rating.component';
 import { CapitalDirective } from './capital.directive';
 import { BalancePipe } from './balance.pipe';
+import { TokenInterceptor } from './token.interceptor';
+import { AboutUsModule } from './about-us/about-us.module';
+import { TextAreaComponent } from './text-area/text-area.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,8 @@ import { BalancePipe } from './balance.pipe';
     ChildComponent,
     RatingComponent,
     CapitalDirective,
-    BalancePipe
+    BalancePipe,
+    TextAreaComponent
   ],
   imports: [
     BrowserModule,
@@ -80,9 +84,16 @@ import { BalancePipe } from './balance.pipe';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AboutUsModule,
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
